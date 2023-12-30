@@ -15,4 +15,6 @@ def uploadImageView(request):
 
 def imageDescriveView(request,image_id):
     image=ImageStore.objects.get(id=image_id)
+    if request.method=="POST":
+        pass
     return render(request,'uploadImage/describeimage.html',context={"Images":image})
