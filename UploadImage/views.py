@@ -13,3 +13,6 @@ def uploadImageView(request):
     image=ImageStore.objects.all()
     return render(request,'uploadImage/uploadimage.html',context={"form":frm,"Images":image})
 
+def imageDescriveView(request,image_id):
+    image=ImageStore.objects.get(id=image_id)
+    return render(request,'uploadImage/describeimage.html',context={"Images":image})

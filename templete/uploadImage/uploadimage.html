@@ -32,18 +32,17 @@
             {% for imgs in Images %}
               <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="/media/{{imgs.image}}" class="card-img-top image-fluid" alt="...">
+                        <img src="/media/{{imgs.image}}" class="card-img-top rounded img-fluid" alt="{{imgs.image_name}}">
                         <div class="card-body">
                         <h5 class="card-title">{{imgs.image_name}}</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="/upload/describe/{{imgs.id}}" class="btn btn-primary">More</a>
                         </div>
                     </div>
               </div>
             {% endfor %}
             </div>
           </div>
-        {{Images}}
     </section>
 
 
