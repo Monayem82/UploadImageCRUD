@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import ImageStoreForm
 from UploadImage.models import ImageStore
+from django.http import HttpResponseRedirect
 
 def uploadImageView(request):
     if request.method=="POST":
@@ -15,6 +16,4 @@ def uploadImageView(request):
 
 def imageDescriveView(request,image_id):
     image=ImageStore.objects.get(id=image_id)
-    if request.method=="POST":
-        pass
     return render(request,'uploadImage/describeimage.html',context={"Images":image})
