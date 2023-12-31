@@ -17,3 +17,8 @@ def uploadImageView(request):
 def imageDescriveView(request,image_id):
     image=ImageStore.objects.get(id=image_id)
     return render(request,'uploadImage/describeimage.html',context={"Images":image})
+
+def imageDelete(request,image_id):
+    del_image=ImageStore.objects.get(id=image_id)
+    del_image.delete()
+    return HttpResponseRedirect('/upload/image/')

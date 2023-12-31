@@ -13,7 +13,7 @@
             <div class="d-flex justify-content-evenly">
                 <a href="{% url 'uploadDashboard' %}">Back</a>
                 <a href="{% url 'uploadDashboard' %}">Update</a>
-                <a href="{% url 'uploadDashboard' %}">Delete</a>
+                <a href="/upload/delete/{{Images.id}}/">Delete</a>
             </div>
             <div class="container text-center">
                             <img src="/media/{{Images.image}}" class="card-img-top rounded img-fluid" alt="">
