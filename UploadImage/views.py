@@ -22,3 +22,24 @@ def imageDelete(request,image_id):
     del_image=ImageStore.objects.get(id=image_id)
     del_image.delete()
     return HttpResponseRedirect('/upload/image/')
+
+def imageUpdateView(request,image_id):
+    update_image=ImageStore.objects.get(id=image_id)
+    if request.method=="POST":
+        data=request.POST
+        files=request.FILES
+        img_name=data.get('image_name')
+        img_file=files.get('image')
+        update_image.image_name=img_name
+        update_image.image=img_file
+
+        each=int(image_id.isdigit())
+
+        update_image.save()
+
+        print(each)
+        return HttpResponseRedirect('/upload/image/')
+    else:
+        update_image=ImageStore.objects.get(id=image_id)
+
+    return render(request,'uploadImage/updateImage.html',context={"update_image":update_image})
